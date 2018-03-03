@@ -146,14 +146,14 @@ class DisplayOutlook extends Component {
                         }
                     }
 
-                    //var point = ((pointsBackToLabel===0) || (pointsBackToLabel===this.yData.length)) ? this.points[this.points.length-1] : this.points[this.points.length-pointsBackToLabel];
-                    //var yAdjust = ((pointsBackToLabel===0) || (pointsBackToLabel===this.yData.length)) ? 4 : -1;
-                    //var text = chart.renderer.text(this.name,
-                    //point.plotX + chart.plotLeft + 2,
-                    //point.plotY + chart.plotTop + yAdjust).attr(
-                    //  {
-                    //    zIndex: 7
-                    //  }).add();
+                    var point = ((pointsBackToLabel===0) || (pointsBackToLabel===this.yData.length)) ? this.points[this.points.length-1] : this.points[this.points.length-pointsBackToLabel];
+                    var yAdjust = ((pointsBackToLabel===0) || (pointsBackToLabel===this.yData.length)) ? 4 : -1;
+                    chart.renderer.text(this.name,
+                        point.plotX + chart.plotLeft + 2,
+                        point.plotY + chart.plotTop + yAdjust).attr(
+                          {
+                            zIndex: 7
+                          }).add();
 
                     };
                   });
