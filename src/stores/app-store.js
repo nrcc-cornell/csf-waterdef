@@ -1131,7 +1131,8 @@ export class AppStore {
             // returns the new date as a UTC date.
             let d = new Date(utcDate);
             d.setDate(d.getDate()+n);
-            return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate(),24)
+            return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate(),4)
+            //return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate(),24)
         }
 
         var combineArraysForOutlookArearange = function (aArr,bArr) {
@@ -1232,7 +1233,8 @@ export class AppStore {
             xAxis: {
                 type: 'datetime',
                 dateTimeLabelFormats: { millisecond: '%H:%M:%S.%L', second: '%H:%M:%S', minute: '%H:%M', hour: '%H:%M', day: '%d %b', week: '%d %b', month: '%b<br/>%Y', year: '%Y' },
-                min: pointStart,
+                //min: pointStart,
+                min: createRelativeDate(pointStart,0),
                 max: createRelativeDate(pointStart,30),
                 labels: {
                   rotation: 0,
@@ -1600,6 +1602,9 @@ export class AppStore {
                 linkedTo: ':previous',
                 color: 'rgb(222,184,135)',
                 lineWidth: 2,
+                marker: {
+                  enabled: false,
+                },
                 data: combineArraysForOutlookArearange(outlook.pointsToPlot['25'],outlook.pointsToPlot['50']),
             },{
                 showInLegend: false,
@@ -1610,6 +1615,9 @@ export class AppStore {
                 linkedTo: ':previous',
                 color: 'rgba(245,222,179,0.3)',
                 lineWidth: 2,
+                marker: {
+                  enabled: false,
+                },
                 data: combineArraysForOutlookArearange(outlook.pointsToPlot['10'],outlook.pointsToPlot['25']),
             },{
                 showInLegend: false,
@@ -1621,6 +1629,9 @@ export class AppStore {
                 color: 'rgba(170,255,170,0.3)',
                 //color: 'rgba(220,220,220,0.3)',
                 lineWidth: 2,
+                marker: {
+                  enabled: false,
+                },
                 data: combineArraysForOutlookArearange(outlook.pointsToPlot['75'],outlook.pointsToPlot['50']),
             },{
                 showInLegend: false,
@@ -1632,6 +1643,9 @@ export class AppStore {
                 color: 'rgba(210,255,210,0.3)',
                 //color: 'rgba(220,220,220,0.3)',
                 lineWidth: 2,
+                marker: {
+                  enabled: false,
+                },
                 data: combineArraysForOutlookArearange(outlook.pointsToPlot['90'],outlook.pointsToPlot['75']),
             //},{
             //    showInLegend: false,
