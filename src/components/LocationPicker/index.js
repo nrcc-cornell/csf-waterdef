@@ -32,7 +32,7 @@ import '../../styles/location-dialog.css';
 window.jQuery = jQuery;
 
 const HOST = 'https://maps.google.com/maps/api/js';
-const KEY = 'AIzaSyDv5pQYe9kRbolVUt0o8XSXSQl4g8BHrrQ';
+const KEY = 'AIzaSyAsZogtpBjpYZH6BHt0WZG4DupbXWISez8';
 const URL_google_api = `${HOST}?key=${KEY}`;
 
 @scriptLoader(
