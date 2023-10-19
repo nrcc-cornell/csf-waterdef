@@ -100,7 +100,7 @@ export class AppStore {
     @computed get climateChangeStatus() { return this.climate_change_status };
     cc_placeholder_content=
         <div>
-        <b>Coming Soon:</b> Over the next several months, our programming team will be incorporating data from downscaled climate change projections into each tool, covering the Northeastern United States. The climate change projections are determined from the <a href="http://cmip-pcmdi.llnl.gov/cmip5/" target="_blank" rel="noopener noreferrer">CMIP5 climate models</a>, maintained by the Northeast Regional Climate Center (<a href="http://www.nrcc.cornell.edu" target="_blank" rel="noopener noreferrer">NRCC</a>) at Cornell. This data will provide the long-term context for the data shown in each Climate Smart Farming Tool – for example, in this tool, the climate projections data will provide context for how climate change will affect the potential for water deficits by season and crop type in the future. This type of information will help farmers and decision makers understand how climate change will likely affect them over the coming decades. For more information, please contact us at <a href="mailto:cicss@cornell.edu?subject=CSF water deficit tool info">cicss@cornell.edu</a>.
+        <b>Coming Soon:</b> Over the next several months, our programming team will be incorporating data from downscaled climate change projections into each tool, covering the Northeastern United States. The climate change projections are determined from the <a href="https://pcmdi.github.io/mips/cmip5/" target="_blank" rel="noopener noreferrer">CMIP5 climate models</a>, maintained by the Northeast Regional Climate Center (<a href="https://www.nrcc.cornell.edu" target="_blank" rel="noopener noreferrer">NRCC</a>) at Cornell. This data will provide the long-term context for the data shown in each Climate Smart Farming Tool – for example, in this tool, the climate projections data will provide context for how climate change will affect the potential for water deficits by season and crop type in the future. This type of information will help farmers and decision makers understand how climate change will likely affect them over the coming decades. For more information, please contact us at <a href="mailto:cicss@cornell.edu?subject=CSF water deficit tool info">cicss@cornell.edu</a>.
         </div>;
 
     // Data Sources and References -------------------------------------------------------
@@ -133,7 +133,7 @@ export class AppStore {
               </p>
               <h4>&bull; ACCESS TO GRIDDED PRECIPITATION DATA</h4>
               <p>
-              Gridded 2.5 x 2.5 mile daily precipitation data (Degaetano and Wilks, 2009) are produced for the Northeast United States by the <a href="http://www.nrcc.cornell.edu" target="_blank" rel="noopener noreferrer">Northeast Regional Climate Center</a>, and are publicly available through the Applied Climate Information System (<a href="http://www.rcc-acis.org" target="_blank" rel="noopener noreferrer">ACIS</a>) web service.
+              Gridded 2.5 x 2.5 mile daily precipitation data (Degaetano and Wilks, 2009) are produced for the Northeast United States by the <a href="https://www.nrcc.cornell.edu" target="_blank" rel="noopener noreferrer">Northeast Regional Climate Center</a>, and are publicly available through the Applied Climate Information System (<a href="https://www.rcc-acis.org" target="_blank" rel="noopener noreferrer">ACIS</a>) web service.
               </p>
               <h4>&bull; REFERENCES</h4>
               <p>
@@ -1841,7 +1841,7 @@ export class AppStore {
     @action downloadResultData = () => {
             if (this.getLoaderResults === false) { this.updateLoaderResults(true); }
             if (this.isDownloadingResultData === false) { this.updateDownloadingResultDataStatus(true); }
-            const url = 'http://tools.climatesmartfarming.org/irrigationtool/datahdf5/?lat='+this.getLat+'&lon='+this.getLon+'&year='+this.getPlantingYear
+            const url = 'https://tools.climatesmartfarming.org/irrigationtool/datahdf5/?lat='+this.getLat+'&lon='+this.getLon+'&year='+this.getPlantingYear
             //const url = 'http://tools.climatesmartfarming.org/irrigationtool/datahdf5/?lat='+lt+'&lon='+ln+'&year='+yr
             jsonp(url, null, (err,data) => {
                 if (err) {
@@ -1867,7 +1867,7 @@ export class AppStore {
     @action downloadOutlookData = () => {
             if (this.getLoaderOutlook === false) { this.updateLoaderOutlook(true); }
             if (this.isDownloadingOutlookData === false) { this.updateDownloadingOutlookDataStatus(true); }
-            const url = 'http://tools.climatesmartfarming.org/irrigationtool/clim/'
+            const url = 'https://tools.climatesmartfarming.org/irrigationtool/clim/'
             jsonp(url, null, (err,data) => {
                 if (err) {
                     console.error(err.message);

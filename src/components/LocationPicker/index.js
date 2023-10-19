@@ -36,10 +36,10 @@ const KEY = 'AIzaSyAsZogtpBjpYZH6BHt0WZG4DupbXWISez8';
 const URL_google_api = `${HOST}?key=${KEY}`;
 
 @scriptLoader(
-  ['http://tools.climatesmartfarming.org/irrigationtool/js/location-dialog-min.js',
+  ['https://tools.climatesmartfarming.org/irrigationtool/js/location-dialog-min.js',
    URL_google_api,
-   'http://tools.climatesmartfarming.org/irrigationtool/js/basil.min.js',
-   'http://tools.climatesmartfarming.org/irrigationtool/js/manage-local-storage.js'
+   'https://tools.climatesmartfarming.org/irrigationtool/js/basil.min.js',
+   'https://tools.climatesmartfarming.org/irrigationtool/js/manage-local-storage.js'
   ],
 )
 @inject("store") @observer
